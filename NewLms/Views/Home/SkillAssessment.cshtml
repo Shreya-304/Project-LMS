@@ -1,0 +1,170 @@
+﻿@model NewLms.ViewModels.SkillAssessmentViewModel
+
+@{
+    ViewBag.Title = "Skill Assessment";
+}
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/NewLms/styles.css")" rel="stylesheet" />
+</head>
+<h2>Employee Skill Assessment Form</h2>
+
+<form action="#">
+    <table>
+        <tr>
+            <td><strong>Technical Skills</strong></td>
+        </tr>
+        <tr>
+            <td><label for="database">Database:</label></td>
+            <td>
+                <select id="database" name="database">
+                    <option value="select">Select</option>
+                    <option value="Basic">Basic Understanding</option>
+                    <option value="Working">Working Experience</option>
+                    <option value="Extensive">Extensive Experience</option>
+                    <option value="Subject Matter">Subject Matter Experience</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="Programming">Programming:</label></td>
+            <td>
+                <select id="Programming" name="Programming">
+                    <option value="select">Select</option>
+                    <option value="Basic">Basic Understanding</option>
+                    <option value="Working">Working Experience</option>
+                    <option value="Extensive">Extensive Experience</option>
+                    <option value="Subject Matter">Subject Matter Experience</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="Java">Java:</label></td>
+            <td>
+                <select id="Java" name="Java">
+                    <option value="select">Select</option>
+                    <option value="Basic">Basic Understanding</option>
+                    <option value="Working">Working Experience</option>
+                    <option value="Extensive">Extensive Experience</option>
+                    <option value="Subject Matter">Subject Matter Experience</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="C#">C#:</label></td>
+            <td>
+                <select id="C#" name="C#">
+                    <option value="select">Select</option>
+                    <option value="Basic">Basic Understanding</option>
+                    <option value="Working">Working Experience</option>
+                    <option value="Extensive">Extensive Experience</option>
+                    <option value="Subject Matter">Subject Matter Experience</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="Python">Python:</label></td>
+            <td>
+                <select id="Python" name="Python">
+                    <option value="select">Select</option>
+                    <option value="Basic">Basic Understanding</option>
+                    <option value="Working">Working Experience</option>
+                    <option value="Extensive">Extensive Experience</option>
+                    <option value="Subject Matter">Subject Matter Experience</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="Web Programming">Web Programming:</label></td>
+            <td>
+                <select id="Web Programming" name="Web Programming">
+                    <option value="select">Select</option>
+                    <option value="Basic">Basic Understanding</option>
+                    <option value="Working">Working Experience</option>
+                    <option value="Extensive">Extensive Experience</option>
+                    <option value="Subject Matter">Subject Matter Experience</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Soft Skills</strong></td>
+        </tr>
+        <tr>
+            <td><label for="verbal">Verbal Communication:</label></td>
+            <td>
+                <select id="verbal" name="verbal">
+                    <option value="select">Select</option>
+                    <option value="Basic">Basic Understanding</option>
+                    <option value="Working">Working Experience</option>
+                    <option value="Extensive">Extensive Experience</option>
+                    <option value="Subject Matter">Subject Matter Experience</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="Written">Written Communication:</label></td>
+            <td>
+                <select id="Written" name="Written">
+                    <option value="select">Select</option>
+                    <option value="Basic">Basic Understanding</option>
+                    <option value="Working">Working Experience</option>
+                    <option value="Extensive">Extensive Experience</option>
+                    <option value="Subject Matter">Subject Matter Experience</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="Teamwork">Teamwork:</label></td>
+            <td>
+                <select id="Teamwork" name="Teamwork">
+                    <option value="select">Select</option>
+                    <option value="Basic">Basic Understanding</option>
+                    <option value="Working">Working Experience</option>
+                    <option value="Extensive">Extensive Experience</option>
+                    <option value="Subject Matter">Subject Matter Experience</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="Problem Solving">Problem Solving:</label></td>
+            <td>
+                <select id="Problem Solving" name="Problem Solving">
+                    <option value="select">Select</option>
+                    <option value="Basic">Basic Understanding</option>
+                    <option value="Working">Working Experience</option>
+                    <option value="Extensive">Extensive Experience</option>
+                    <option value="Subject Matter">Subject Matter Experience</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="Decision making">Decision making:</label></td>
+            <td>
+                <select id="Decision making" name="Decision making">
+                    <option value="select">Select</option>
+                    <option value="Basic">Basic Understanding</option>
+                    <option value="Working">Working Experience</option>
+                    <option value="Extensive">Extensive Experience</option>
+                    <option value="Subject Matter">Subject Matter Experience</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="Leadership">Leadership:</label></td>
+            <td>
+                <select id="Leadership" name="Leadership">
+                    <option value="select">Select</option>
+                    <option value="Basic">Basic Understanding</option>
+                    <option value="Working">Working Experience</option>
+                    <option value="Extensive">Extensive Experience</option>
+                    <option value="Subject Matter">Subject Matter Experience</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <label for="comments">Additional Comments/Notes:</label><br>
+    <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br><br>
+    <input type="submit" value="Submit">
+</form>
+
+

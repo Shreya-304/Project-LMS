@@ -1,0 +1,98 @@
+﻿@model NewLms.Models.LoginModel
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml"; // Assuming you have a shared layout
+}
+
+
+<div class="login-container">
+    <h2>Login</h2>
+
+    @using (Html.BeginForm("ValidateCredentials", "Login", FormMethod.Post, new { id = "loginForm" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Username)
+            @Html.TextBoxFor(m => m.Username, new { @class = "form-control", required = "required" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Password)
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control", required = "required" })
+        </div>
+
+        <div class="form-group">
+            @Html.CheckBoxFor(m => m.RememberMe)
+            @Html.LabelFor(m => m.RememberMe, new { @class = "control-label" })
+        </div>
+
+        <button type="submit" class="btn btn-primary">Login</button>
+    }
+
+    <div class="error-message" id="loginMessage"></div>
+
+    <div class="forgot-password-link">
+        <p>Forgot password? @Html.ActionLink("Click here!", "ForgotPassword", "ForgotPassword")</p>
+    </div>
+
+    <div class="register-link">
+        <p>Create a new account? @Html.ActionLink("Register here!", "Register", "Employee")</p>
+    </div>
+
+
+    <div class="social-login">
+        <p>Or login with:</p>
+        <div class="g-signin2" data-onsuccess="onGoogleSignIn"></div>
+    </div>
+
+    <div class="terms-link">
+        @Html.ActionLink("Terms of Service", "TermsAndServicePage", "Home") | @Html.ActionLink("Privacy Policy", "Privacy", "Home")
+    </div>
+</div>
+
+<script src="@Url.Content("~/js/site.js")"></script>
+
+@section scripts {
+    <script>
+        function validateLogin() {
+            // Fetch username and password from form
+            const username = document.getElementById('Username').value;
+            const password = document.getElementById('Password').value;
+
+            // Send login request to server and handle the response
+            fetch('@Url.Action("ValidateCredentials", "Login")', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    username: username,
+                    password: password
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.isSuccess) {
+                    const role = data.userRole;
+
+                    if (role === 'Admin') {
+                        window.location.href = '@Url.Action("AdminDashboard", "Admin")';
+                    } else if (role === 'User') {
+                        window.location.href = '@Url.Action("UserDashboard", "User")';
+                    } else {
+                        // Handle invalid role
+                        showMessage('Invalid user role');
+                    }
+                } else {
+                    // Handle invalid credentials or errors
+                    showMessage(data.errorMessage || 'Invalid credentials. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showMessage('An error occurred. Please try again.');
+            });
+        }
+    </script>
+}

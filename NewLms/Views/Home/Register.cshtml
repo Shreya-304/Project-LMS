@@ -1,0 +1,89 @@
+﻿@model NewLms.Models.Employee
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<h2><b>LMS Registration Form</b></h2>
+<form  method="post" enctype="multipart/form-data">
+    <label for="EMP_ID">Employee ID: *</label><br>
+    <input type="text" id="EMP_ID" name="EMP_ID" maxlength="5" required><br><br>
+
+    <label for="FirstName">First Name: *</label><br>
+    <input type="text" id="FirstName" name="FirstName" pattern="[A-Za-z]+" required><br>
+    <small style="color: red;">Only alphabetic characters are allowed</small><br><br>
+
+    <label for="LastName">Last Name: *</label><br>
+    <input type="text" id="LastName" name="LastName" pattern="[A-Za-z]+" required><br>
+    <small style="color: red;">Only alphabetic characters are allowed</small><br><br>
+
+    <label for="JobRole">Job Role:</label><br>
+    <input type="text" id="JobRole" name="JobRole"><br><br>
+
+    <label for="ReportingManager">Reporting Manager:</label><br>
+    <input type="text" id="ReportingManager" name="ReportingManager"><br><br>
+
+    <label style="display: inline-block;">Gender: *</label><br>
+    <input type="radio" id="male" name="Gender" value="male" required style="display: inline-block; margin-right: 5px;">
+    <label for="male" style="display: inline-block; margin-right: 15px;">Male</label>
+    <input type="radio" id="female" name="Gender" value="female" style="display: inline-block; margin-right: 5px;">
+    <label for="female" style="display: inline-block; margin-right: 15px;">Female</label>
+    <input type="radio" id="other" name="Gender" value="other" style="display: inline-block; margin-right: 5px;">
+    <label for="other" style="display: inline-block;">Other</label><br><br>
+    <small id="genderWarning" style="color: red; display: none;">Please select a Gender</small><br><br>
+
+
+    <label for="DOB">Date of Birth:</label><br>
+    <input type="date" id="DOB" name="DOB"><br><br>
+
+    <label for="ContactNumber">Contact Number:</label><br>
+    <input type="text" id="ContactNumber" name="ContactNumber"><br><br>
+
+    <label for="EmailID">Email ID:</label><br>
+    <input type="email" id="EmailID" name="EmailID"><br><br>
+
+    <label for="Address">Address:</label><br>
+    <textarea id="Address" name="Address" rows="4"></textarea><br><br>
+
+    <label for="DateOfJoining">Date of Joining:</label><br>
+    <input type="date" id="DateOfJoining" name="DateOfJoining"><br><br>
+
+    <label for="TotalITExperience">Total IT Experience (in years):</label><br>
+    <input type="number" id="TotalITExperience" name="TotalITExperience" min="0"><br><br>
+
+    <label for="BachelorDegree">Bachelor's Degree:</label><br>
+    <select id="BachelorDegree" name="BachelorDegree">
+        <option value="">Select</option>
+        <option value="BA">BA</option>
+        <option value="BCOM">BCOM</option>
+        <option value="BSC">BSC</option>
+        <option value="BE">BE</option>
+        <option value="BTech">BTech</option>
+        <option value="Other">Other</option>
+    </select><br><br>
+
+    <label for="BachelorSpecialization">Bachelor's Specialization:</label><br>
+    <input type="text" id="BachelorSpecialization" name="BachelorSpecialization"><br><br>
+
+    <label for="MastersDegree">Master's Degree:</label><br>
+    <select id="MastersDegree" name="MastersDegree">
+        <option value="">Select</option>
+        <option value="MA">MA</option>
+        <option value="MCOM">MCOM</option>
+        <option value="MSC">MSC</option>
+        <option value="MCA">MCA</option>
+        <option value="ME">ME</option>
+        <option value="MTech">MTech</option>
+        <option value="MBA">MBA</option>
+        <option value="Other">Other</option>
+
+    </select><br><br>
+
+    <label for="MastersSpecialization">Master's Specialization:</label><br>
+    <input type="text" id="MastersSpecialization" name="MastersSpecialization"><br><br>
+
+    <label for="Certifications">Certifications:</label><br>
+    <textarea id="Certifications" name="Certifications" rows="4"></textarea><br><br>
+
+
+    <input type="submit" value="Register">
+</form>
